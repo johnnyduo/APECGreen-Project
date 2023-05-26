@@ -110,6 +110,7 @@ const CalenderPage = lazy(() => import("./pages/app/calender"));
 import Loading from "@/components/Loading";
 import FormKyc from "./pages/forms/form-kyc";
 import FormInsurance from "./pages/forms/form-insurance";
+import FormExport from "./pages/forms/form-export";
 import { useAccount } from "wagmi";
 import { useDispatch } from "react-redux";
 import { handleLogin, handleLogout } from "./pages/auth/common/store";
@@ -270,6 +271,7 @@ function App() {
           <Route path="form-repeater" element={<FormRepeater />} />
           <Route path="form-wizard" element={<FormWizard />} />
           <Route path="form-kyc" element={<FormKyc />} />
+          <Route path="form-export" element={<FormExport />} />
           <Route path="form-insurance" element={<FormInsurance />} />
           <Route path="select" element={<SelectPage />} />
           <Route path="date-time-picker" element={<Flatpicker />} />

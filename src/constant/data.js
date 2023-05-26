@@ -5,6 +5,12 @@ export const menuItems = [
   },
 
   {
+    title: "Export AI Assistant",
+    isHide: true,
+    icon: "heroicons-outline:bolt",
+    link: "form-export",
+  },
+  {
     title: "Carbon Tracking",
     isHide: true,
     icon: "heroicons-outline:pencil-square",
