@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useDarkMode from "@/hooks/useDarkMode";
 
 import LogoWhite from "@/assets/images/logo/logo-white.svg";
-import Logo from "@/assets/images/logo/838earth-logo.png";
+import Logo from "@/assets/images/logo/apec_green_logo.png";
 import SvgImage from "@/assets/images/svg/838landing.svg";
 import { useDispatch } from "react-redux";
 import { handleLogin } from "../auth/common/store";
@@ -51,13 +51,13 @@ const ComingSoonPage = () => {
           <div className="max-w-[500px] space-y-4">
             <div className="relative flex space-x-3 items-center text-2xl text-slate-900 dark:text-white">
               <span className="inline-block w-[25px] bg-secondary-500 h-[1px]"></span>
-              <span>Regenerative Finance (ReFi)</span>
+              <span>APEC Green</span>
             </div>
             <div className="xl:text-[3.5em] xl:leading-[70px] xs:text-[2em] sm:text-[2.5em] text-4xl font-semibold text-slate-900 dark:text-white">
-              Carbon Removal Credits Insurance 
+              Sustainable Trade Credit Insurance 
             </div>
             <p className="font-normal text-slate-600 dark:text-slate-300 max-w-[500px]">
-              Secure the delivery risk to limit the global temperature increase to {'<'}2&deg;C centigrade and achieve net zero emissions by mid-century 
+              Empowering Sustainable Trade with APEC Green: Unlocking Opportunities, Ensuring Protection. 
             </p>
             <div className="bg-white flex items-center px-3 rounded">
               <input
@@ -111,7 +111,7 @@ const ComingSoonPage = () => {
               <ul className="flex md:justify-start justify-center space-x-3">
                 <li>
                   <a
-                    href="https://docs.838.earth"
+                    href="https://docs.apec.green"
                     className="text-slate-500 dark:text-slate-400 text-sm transition duration-150 hover:text-slate-900"
                   >
                     Doc

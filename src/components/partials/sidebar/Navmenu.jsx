@@ -37,7 +37,7 @@ const Navmenu = ({ menus }) => {
         }
       }
     });
-    document.title = `838.Earth  | ${locationName}`;
+    document.title = `APEC.green  | ${locationName}`;
 
     setActiveSubmenu(submenuIndex);
     dispatch(toggleActiveChat(false));

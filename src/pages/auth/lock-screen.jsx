@@ -73,7 +73,7 @@ const LockScreen = () => {
               </div>
             </div>
             <div className="auth-footer text-center">
-              Copyright 2023, 838.Earth All Rights Reserved.
+              Copyright 2023, APEC.green All Rights Reserved.
             </div>
           </div>
         </div>

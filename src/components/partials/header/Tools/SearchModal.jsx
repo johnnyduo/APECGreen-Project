@@ -15,7 +15,7 @@ const SearchModal = () => {
   const searchList = [
     {
       id: 1,
-      name: "What is 838.earth ?",
+      name: "What is APEC.green?",
     },
     {
       id: 2,

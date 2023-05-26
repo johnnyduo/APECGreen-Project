@@ -11,7 +11,7 @@ const ImageBlock1 = () => {
     >
       <div className="max-w-[169px]">
         <div className="text-xl font-medium text-slate-900 mb-2">
-          Welcome to 838.Earth
+          Welcome to APEC.green
         </div>
         <p className="text-sm text-slate-800">Let's achieve the goal</p>
       </div>

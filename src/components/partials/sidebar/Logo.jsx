@@ -42,7 +42,7 @@ const SidebarLogo = ({ menuHover }) => {
           {(!collapsed || menuHover) && (
             <div>
               <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                838.Earth
+                APEC.green
               </h1>
             </div>
           )}
