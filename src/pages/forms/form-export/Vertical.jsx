@@ -172,7 +172,7 @@ const FormWizard = () => {
             "messages": [
               {
                 "role": "user",
-                "content": `${queryText} Please list any resisting policies of that country that support our product. Please give answer in list of no more than 50 words each`
+                "content": `${queryText} Please list any resisting policies of that country that prevent our product from success in the particular country. Please give answer in list of no more than 50 words each`
               }
             ]
           }
