@@ -111,14 +111,6 @@ const ComingSoonPage = () => {
               <ul className="flex md:justify-start justify-center space-x-3">
                 <li>
                   <a
-                    href="https://docs.apec.green"
-                    className="text-slate-500 dark:text-slate-400 text-sm transition duration-150 hover:text-slate-900"
-                  >
-                    Doc
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="#"
                     className="text-slate-500 dark:text-slate-400 text-sm transition duration-150 hover:text-slate-900"
                   >
