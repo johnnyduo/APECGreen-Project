@@ -6,7 +6,7 @@ import useDarkMode from "@/hooks/useDarkMode";
 
 import LogoWhite from "@/assets/images/logo/logo-white.svg";
 import Logo from "@/assets/images/logo/apec_green_logo.png";
-import SvgImage from "@/assets/images/svg/838landing.svg";
+import SvgImage from "@/assets/images/svg/apec_green_trade2.svg";
 import { useDispatch } from "react-redux";
 import { handleLogin } from "../auth/common/store";
 
