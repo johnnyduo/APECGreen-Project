@@ -273,7 +273,7 @@ const FormWizard = () => {
                       label="Origination"
                       type="text"
                       placeholder="Your Country"
-                      name="product"
+                      name="origination"
                       error={errors.origination}
                       register={register}
                     />
