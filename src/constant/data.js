@@ -34,12 +34,12 @@ export const menuItems = [
     icon: "heroicons-outline:identification",
     link: "form-kyc",
   },
-  {
-    title: "Investment",
-    isHide: true,
-    icon: "heroicons-outline:chart-bar",
-    link: "banking",
-  },
+  // {
+  //   title: "Investment",
+  //   isHide: true,
+  //   icon: "heroicons-outline:chart-bar",
+  //   link: "banking",
+  // },
 
   // {
   //   title: "Dashboard",
