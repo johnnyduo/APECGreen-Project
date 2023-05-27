@@ -57,7 +57,7 @@ const ComingSoonPage = () => {
               Sustainable Trade Credit Insurance 
             </div>
             <p className="font-normal text-slate-600 dark:text-slate-300 max-w-[500px]">
-              Empowering Sustainable Trade with APEC Green: Unlocking Opportunities, Ensuring Protection. 
+              Empowering Sustainable Trade with APEC Green by Unlocking Opportunities & Ensuring Protection. 
             </p>
             <div className="bg-white flex items-center px-3 rounded">
               <input
@@ -72,7 +72,7 @@ const ComingSoonPage = () => {
               </div>
             </div>
             <div className="text-sm text-slate-500 dark:text-slate-400">
-              *Get notified when we launch
+              *Get more information about APEC international trade
             </div>
           </div>
           <div>
