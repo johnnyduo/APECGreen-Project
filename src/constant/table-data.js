@@ -563,10 +563,10 @@ import customer1 from "@/assets/images/all-img/customer_1.png";
 export const domainTable = [
   {
     company: {
-      name: "SCB 10X",
+      name: "APEC",
       image: customer1,
     },
-    domain: "scb10x.earth",
+    domain: "Apec.Green",
     expirationDate: "1/1/2050",
     goal: '11.2M Ton',
     achieved: '3.1M Ton',

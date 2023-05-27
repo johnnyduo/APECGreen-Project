@@ -169,9 +169,9 @@ const BankingPage = () => {
             <div className="flex-1">
               <h4 className="text-xl font-medium mb-2">
                 <span className="block font-light">Good evening,</span>
-                <span className="block">scb10x</span>
+                <span className="block">0xAPEC</span>
               </h4>
-              <p className="text-sm dark:text-slate-300">scb10x.earth</p>
+              <p className="text-sm dark:text-slate-300">Thailand.Green</p>
             </div>
           </div>
           <GroupChart5 />

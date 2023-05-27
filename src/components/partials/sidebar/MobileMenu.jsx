@@ -83,7 +83,7 @@ const MobileMenu = ({ className = "custom-class" }) => {
           <div className="max-w-[160px] mx-auto mt-6">
             <div className="widget-title">Let's do</div>
             <div className="text-xs font-light">
-              Regenerative Finance
+              Sustainable Export Product
             </div>
           </div>
           <div className="mt-6">
