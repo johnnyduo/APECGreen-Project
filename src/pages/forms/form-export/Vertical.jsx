@@ -222,25 +222,41 @@ const FormWizard = () => {
                       </h4>
                     </div>
                     <Textinput
-                      label="Product"
+                      label="Export Product"
                       type="text"
-                      placeholder="EV Car"
+                      placeholder="For i.e, EV Car"
                       name="product"
                       error={errors.username}
                       register={register}
                     />
                     <Textinput
-                      label="Quantity"
+                      label="Quantity (Pieces)"
                       type="text"
-                      placeholder="10000"
+                      placeholder="1000"
                       name="quantity"
                       error={errors.quantity}
                       register={register}
                     />
                     <Textinput
-                      label="Country"
+                      label="Weight (Kg)"
                       type="text"
-                      placeholder="Hong Kong"
+                      placeholder="15,000"
+                      name="quantity"
+                      error={errors.weight}
+                      register={register}
+                    />
+                    <Textinput
+                      label="Origination"
+                      type="text"
+                      placeholder="Your Country"
+                      name="product"
+                      error={errors.origination}
+                      register={register}
+                    />
+                    <Textinput
+                      label="Destination"
+                      type="text"
+                      placeholder="APEC Countries"
                       name="country"
                       error={errors.country}
                       register={register}
