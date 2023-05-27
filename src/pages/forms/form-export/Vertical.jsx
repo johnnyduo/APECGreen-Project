@@ -40,7 +40,9 @@ const steps = [
 let stepSchema = yup.object().shape({
   product: yup.string().required("Product is required"),
   quantity: yup.number().required("Quantity is required"),
+  origination: yup.string().required("Origination is required"),
   country: yup.string().required("Country is required"),
+  weight: yup.string().required("Weight is required"),
   year: yup.number().required("Country is required"),
 });
 
@@ -111,11 +113,12 @@ const FormWizard = () => {
   const [minting, setMinting] = useState(false)
 
   const [carbonFootprint, setCarbonFootprint] = useState("")
+  const [carbonReduction, setCarbonReduction] = useState("")
   const [beneficialPolicies, setBeneficialPolicies] = useState("")
   const [resistingPolicies, setResistingPolicies] = useState("")
 
   const onSubmit = async (data) => {
-    const queryText = `I want to export ${data.quantity} ${data.product} in ${data.year} to ${data.country}.`
+    const queryText = `I want to export ${data.quantity} ${data.product} weight ${data.weight} kg in ${data.year} from ${data.origination} to ${data.country}.`
     const promises = []
 
     try {
@@ -130,7 +133,7 @@ const FormWizard = () => {
             "messages": [
               {
                 "role": "user",
-                "content": `${queryText} Please calculate the carbon footprint for our product. Also, Please give me how much carbon reduction is for our product? Please give answer in summarized form in at most two paragraphs`
+                "content": `${queryText} Please list any factor required to estimate carboon footprint. Please give answer in list of no more than 50 words each`
               }
             ]
           }
@@ -139,6 +142,27 @@ const FormWizard = () => {
         )).catch(err => {
           console.error(err)
           toast.error("Error generating response for carbon footprint")
+        })
+      );
+
+      promises.push(
+        axios.post(
+          'https://chatgpt.chom.business/v1/chat/completions',
+          {
+            "model": "gpt-3.5-turbo",
+            "max_tokens": 500,
+            "messages": [
+              {
+                "role": "user",
+                "content": `${queryText} Please estimate carbon reduction and show how to estimate it. Please give answer in summarized form in at most two paragraphs`
+              }
+            ]
+          }
+        ).then(carbonReductionResponse => (
+          setCarbonReduction(carbonReductionResponse.data.choices[0].message.content)
+        )).catch(err => {
+          console.error(err)
+          toast.error("Error generating response for carbon reduction")
         })
       );
 
@@ -364,13 +388,26 @@ const FormWizard = () => {
         </div>
       </Card>
 
-      {(minting || carbonFootprint || beneficialPolicies || resistingPolicies) &&
+      {(minting || carbonFootprint || carbonReduction || beneficialPolicies || resistingPolicies) &&
         <Card title="AI Response" className="mt-8">
           <div className="mb-6">
-            <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Carbon Footprint and Reduction</h6>
+            <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Carbon Footprint Factors</h6>
             {carbonFootprint ?
               <div className="whitespace-pre-line">
                 {carbonFootprint}
+              </div>
+              :
+              <div className="mb-10">
+                <img src={botthinking} style={{ height: 120 }} />
+              </div>
+            }
+          </div>
+
+          <div className="mb-6">
+            <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Carbon Reduction</h6>
+            {carbonReduction ?
+              <div className="whitespace-pre-line">
+                {carbonReduction}
               </div>
               :
               <div className="mb-10">

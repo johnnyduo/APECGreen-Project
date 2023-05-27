@@ -57,7 +57,8 @@ const xdcTestnet = {
 }
 
 const { chains, provider } = configureChains(
-  [optimismGoerli, polygonZkEvmTestnet, xdcTestnet, gnosisChiado],
+  // [optimismGoerli, polygonZkEvmTestnet, xdcTestnet, gnosisChiado],
+  [optimismGoerli],
   [
     // alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider(),
