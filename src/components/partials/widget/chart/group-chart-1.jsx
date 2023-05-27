@@ -206,7 +206,7 @@ const shapeLine3 = {
 const statistics = [
   {
     name: shapeLine1,
-    title: "CC Reduction",
+    title: "Carbon Reduction",
     count: "2.13M Ton",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
   },
@@ -218,8 +218,8 @@ const statistics = [
   },
   {
     name: shapeLine3,
-    title: "Growth",
-    count: "+5.0%",
+    title: "Trade Coverage",
+    count: "105%",
     bg: "bg-[#EAE5FF] dark:bg-slate-900	",
   },
 ];
