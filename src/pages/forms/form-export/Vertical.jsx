@@ -265,7 +265,7 @@ const FormWizard = () => {
                       label="Weight (Kg)"
                       type="text"
                       placeholder="15,000"
-                      name="quantity"
+                      name="weight"
                       error={errors.weight}
                       register={register}
                     />
