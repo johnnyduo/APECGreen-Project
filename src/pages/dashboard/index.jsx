@@ -41,7 +41,7 @@ const Dashboard = () => {
             <RadialsChart />
           </Card>
         </div>
-        <div className="lg:col-span-8 col-span-12">
+        {/* <div className="lg:col-span-8 col-span-12">
           <Card title="Focused Solutions" headerslot={<SelectMonth />} noborder>
             <CompanyTable />
           </Card>
@@ -50,7 +50,7 @@ const Dashboard = () => {
           <Card title="Recent Activity" headerslot={<SelectMonth />}>
             <RecentActivity />
           </Card>
-        </div>
+        </div> */}
         <div className="lg:col-span-8 col-span-12">
           <Card
             title="The Paris Agreement 2015 Goal - 196 Parties"

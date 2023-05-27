@@ -10,12 +10,12 @@ export const menuItems = [
     icon: "heroicons-outline:bolt",
     link: "form-export",
   },
-  // {
-  //   title: "Carbon Tracking",
-  //   isHide: true,
-  //   icon: "heroicons-outline:pencil-square",
-  //   link: "dashboard",
-  // },
+  {
+    title: "Carbon Tracking",
+    isHide: true,
+    icon: "heroicons-outline:pencil-square",
+    link: "dashboard",
+  },
   {
     title: "Trade Credit Insure",
     isHide: true,
