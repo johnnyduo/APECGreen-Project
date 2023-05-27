@@ -70,29 +70,31 @@ export const authSlice = createSlice({
       window.localStorage.setItem("isAuth", JSON.stringify(state.isAuth));
 
       const delayer = parseInt(window.localStorage.getItem("HOTFIX_LOGIN_DELAY") || "0")
+      window.localStorage.setItem("HOTFIX_LOGIN_DELAY", Date.now().toString())
 
-      if (Date.now() - delayer > 1000) {
-        toast.success("User logged in successfully", {
-          position: "top-right",
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+      setTimeout(() => {
+        if (Date.now() - delayer > 1000) {
+          toast.success("User logged in successfully", {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+      }, 100)
 
-        window.localStorage.setItem("HOTFIX_LOGIN_DELAY", Date.now().toString())
-      }
     },
     handleLogout: (state, action) => {
       state.isAuth = action.payload;
       // remove isAuth from local storage
       window.localStorage.removeItem("isAuth");
-      toast.success("User logged out successfully", {
-        position: "top-right",
-      });
+      // toast.success("User logged out successfully", {
+      //   position: "top-right",
+      // });
     },
   },
 });
