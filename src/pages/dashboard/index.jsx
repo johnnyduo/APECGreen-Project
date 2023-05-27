@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [filterMap, setFilterMap] = useState("global");
   return (
     <div>
-      <HomeBredCurbs title="Carbon Tracking" />
+      <HomeBredCurbs title="Export Carbon Tracking" />
       <div className="grid grid-cols-12 gap-5 mb-5">
         <div className="2xl:col-span-3 lg:col-span-4 col-span-12">
           <ImageBlock1 />

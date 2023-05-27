@@ -206,7 +206,7 @@ const shapeLine3 = {
 const statistics = [
   {
     name: shapeLine1,
-    title: "Achieved",
+    title: "CC Reduction",
     count: "2.13M Ton",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
   },

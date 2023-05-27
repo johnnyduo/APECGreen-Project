@@ -25,7 +25,7 @@ const steps = [
   },
   {
     id: 3,
-    title: "CRCs Premium",
+    title: "TCI Premium",
   },
   {
     id: 4,
@@ -181,7 +181,7 @@ const FormWizard = () => {
 
   return (
     <div>
-      <Card title="Get CRCs Insurance">
+      <Card title="Get Trade Credit Insurance">
         <div className="grid gap-5 grid-cols-12">
           <div className="lg:col-span-3 col-span-12">
             <div className="flex z-[5] items-start relative flex-col lg:min-h-full md:min-h-[300px] min-h-[250px]">
@@ -286,20 +286,6 @@ const FormWizard = () => {
                       label="Target Phase (Year)"
                       register={register}
                     />
-                    <Textinput
-                      label="Suggested Solution"
-                      type="text"
-                      placeholder="Nature-Based Solution"
-                      name="lname"
-                      register={register}
-                      readonly
-                    />
-                    <Select
-                      options={["Aff_0x41234 (Rate 8.9)", "Aff_0x88322 (Rate 9.2)", "Hybrid_0x86768 (Rate 9.7)","Tech_0x42349 (Rate 7.4)"]}
-                      name="partnerName"
-                      label="Select Service Provider"
-                      register={register}
-                    />
                   </div>
                 </div>
               )}
@@ -308,29 +294,35 @@ const FormWizard = () => {
                   <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
                     <div className="md:col-span-2 col-span-1">
                       <h4 className="text-base text-slate-800 dark:text-slate-300 mb-6">
-                        Carbon Credit Removal Insurance Premium
+                        Trade Credit Insurance Premium (Coverage)
                       </h4>
                     </div>
                     <Textinput
-                      label="Selected Focused Solution"
+                      label="Your Export Product"
                       id="pn3"
                       type="text"
-                      placeholder="Nature-Based: Afforestation by Aff_0x41234 (Rate 8.9) "
+                      placeholder="For i.e, EV Cars, EV Charger"
                       register={register}
                     />
                     <Textinput
-                      label="Cost"
+                      label="Total Billing Cost ($)"
                       id="pn4"
-                      readonly
                       type="text"
-                      placeholder="$10,000 (7 years)"
+                      placeholder="$300,000"
                       register={register}
                     />
                     <Textinput
-                      label="CRCs Insurance Coverage"
+                      label="Product Weight (kg)"
+                      id="pn4"
+                      type="text"
+                      placeholder="10,000"
+                      register={register}
+                    />
+                    <Textinput
+                      label="Expected Coverage"
                       id="pn5"
                       type="text"
-                      placeholder="Up to $50,000"
+                      placeholder="Up to $300,000"
                       register={register}
                     />
                     <Textinput
@@ -338,7 +330,7 @@ const FormWizard = () => {
                       id="pn2"
                       readonly
                       type="text"
-                      placeholder="$1,500 per year"
+                      placeholder="$30,000 per export"
                       register={register}
                     />
                   </div>

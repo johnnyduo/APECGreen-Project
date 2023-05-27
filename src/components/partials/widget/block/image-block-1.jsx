@@ -13,7 +13,7 @@ const ImageBlock1 = () => {
         <div className="text-xl font-medium text-slate-900 mb-2">
           Welcome to APEC.green
         </div>
-        <p className="text-sm text-slate-800">Let's achieve the goal</p>
+        <p className="text-sm text-slate-800">Let's sustain the trade</p>
       </div>
       <div className="absolute top-1/2 -translate-y-1/2 ltr:right-6 rtl:left-6 mt-2 h-12 w-12 bg-white text-slate-900 rounded-full text-xs font-medium flex flex-col items-center justify-center">
         Now

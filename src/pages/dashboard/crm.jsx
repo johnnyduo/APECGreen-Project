@@ -85,7 +85,7 @@ const CrmPage = () => {
       </div>
 
       <div className="mt-10">
-        <HomeBredCurbs title="Insurances" />
+        <HomeBredCurbs title="Trade Credit Insurance" />
       </div>
       <div className="space-y-5">
         <ExampleThree title="" />

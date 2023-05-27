@@ -11,7 +11,7 @@ export const menuItems = [
     link: "form-export",
   },
   {
-    title: "Carbon Tracking",
+    title: "Export Carbon Tracking",
     isHide: true,
     icon: "heroicons-outline:pencil-square",
     link: "dashboard",
