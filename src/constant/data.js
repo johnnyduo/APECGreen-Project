@@ -10,20 +10,20 @@ export const menuItems = [
     icon: "heroicons-outline:bolt",
     link: "form-export",
   },
+  // {
+  //   title: "Carbon Tracking",
+  //   isHide: true,
+  //   icon: "heroicons-outline:pencil-square",
+  //   link: "dashboard",
+  // },
   {
-    title: "Carbon Tracking",
-    isHide: true,
-    icon: "heroicons-outline:pencil-square",
-    link: "dashboard",
-  },
-  {
-    title: "Carbon Removal Insure",
+    title: "Trade Credit Insure",
     isHide: true,
     icon: "heroicons-outline:cloud",
     link: "form-insurance",
   },
   {
-    title: "Domain Name",
+    title: "Digital Identity",
     isHide: true,
     icon: "heroicons-outline:rectangle-stack",
     link: "crm",
@@ -35,7 +35,7 @@ export const menuItems = [
     link: "form-kyc",
   },
   {
-    title: "Invest",
+    title: "Investment",
     isHide: true,
     icon: "heroicons-outline:chart-bar",
     link: "banking",
