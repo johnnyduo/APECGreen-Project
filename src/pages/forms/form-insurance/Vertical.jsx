@@ -5,6 +5,7 @@ import Textarea from "@/components/ui/Textarea";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
+import Datepicker from "react-tailwindcss-datepicker";
 import { useForm } from "react-hook-form";
 import Select from "@/components/ui/Select";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -21,7 +22,7 @@ const steps = [
   },
   {
     id: 2,
-    title: "Company Goal",
+    title: "Coverage Date",
   },
   {
     id: 3,
@@ -40,7 +41,7 @@ let stepSchema = yup.object().shape({
 });
 
 let personalSchema = yup.object().shape({
-  ton: yup.string().required("Carbon removal target is required"),
+  ton: yup.string().required("Date & Time are required"),
 });
 let addressSchema = yup.object().shape({
 });
@@ -55,8 +56,16 @@ const FormWizard = () => {
   const { data: signer } = useSigner();
   const { address } = useAccount();
   const { chain } = useNetwork();
-  
   const [stepNumber, setStepNumber] = useState(0);
+
+  const [value, setValue] = useState({
+    startDate: new Date(),
+    endDate: new Date().setMonth(11),
+  });
+
+  const handleValueChange = (newValue) => {
+    setValue(newValue);
+  };
 
   // find current step schema
   let currentStepSchema;
@@ -269,23 +278,26 @@ const FormWizard = () => {
                   <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
                     <div className="md:col-span-2 col-span-1">
                       <h4 className="text-base text-slate-800 dark:text-slate-300 mb-6">
-                        Set Company Carbon Removal Goal
+                        Sustainable Export Coverage Date & Time
                       </h4>
                     </div>
                     <Textinput
-                      label="Carbon Removal Target (kg)"
+                      label="Expected Export Date"
                       type="text"
-                      placeholder="Enter your goal in Kg"
+                      placeholder="Date & Time"
                       name="ton"
                       error={errors.ton}
                       register={register}
                     />
-                    <Select
-                      options={["2025", "2030", "2040","2050"]}
-                      name="year"
-                      label="Target Phase (Year)"
-                      register={register}
-                    />
+                    <div className="date-range-custom2 relative">
+                      <Datepicker
+                        value={value}
+                        asSingle={true}
+                        inputClassName="input-class"
+                        containerClassName="container-class"
+                        onChange={handleValueChange}
+                      />
+                    </div>
                   </div>
                 </div>
               )}
