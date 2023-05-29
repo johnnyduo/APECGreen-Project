@@ -41,7 +41,7 @@ let stepSchema = yup.object().shape({
 });
 
 let personalSchema = yup.object().shape({
-  ton: yup.string().required("Date & Time are required"),
+  // ton: yup.string().required("Date & Time are required"),
 });
 let addressSchema = yup.object().shape({
 });
@@ -64,6 +64,7 @@ const FormWizard = () => {
   });
 
   const handleValueChange = (newValue) => {
+    console.log(newValue)
     setValue(newValue);
   };
 
@@ -281,14 +282,21 @@ const FormWizard = () => {
                         Sustainable Export Coverage Date & Time
                       </h4>
                     </div>
-                    <Textinput
+                    <div className="md:col-span-2 col-span-1">
+                      <label className="font-bold text-sm">Expected Export Date</label>
+                    </div>
+                    <div>
+                      {value.startDate.toString()}
+                    </div>
+                    {/* <Textinput
                       label="Expected Export Date"
                       type="text"
                       placeholder="Date & Time"
                       name="ton"
                       error={errors.ton}
                       register={register}
-                    />
+                      value={value.startDate.toString()}
+                    /> */}
                     <div className="date-range-custom2 relative">
                       <Datepicker
                         value={value}
