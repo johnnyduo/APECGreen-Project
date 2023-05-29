@@ -29,11 +29,11 @@ const steps = [
   },
   {
     id: 3,
-    title: "Focused Solution",
+    title: "Export Solution",
   },
   {
     id: 4,
-    title: "Domain Generation",
+    title: "DID Generation",
   },
 ];
 
@@ -324,11 +324,11 @@ const FormWizard = () => {
                   <div className="grid grid-cols-1 gap-5">
                     <div className="">
                       <h4 className="text-base text-slate-800 dark:text-slate-300 mb-6">
-                        Specify your solution
+                        Specify your export solution / focused solution
                       </h4>
                     </div>
                     <Select
-                      options={["Nature-Based Solution", "Hybrid Solution", "Technological Solution"]}
+                      options={["Nature-Based Export Solution", "Hybrid Export Solution", "Technological Export Solution"]}
                       label="Method"
                     />
                     <Textarea
@@ -404,7 +404,7 @@ const FormWizard = () => {
           </div>
 
           <div className="mb-6">
-            <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Carbon Reduction</h6>
+            <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Estimated Carbon Reduction</h6>
             {carbonReduction ?
               <div className="whitespace-pre-line">
                 {carbonReduction}
