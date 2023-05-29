@@ -53,7 +53,7 @@ const COLUMNS = [
   //   },
   // },
   {
-    Header: "domain",
+    Header: "Insurance Policy",
     accessor: "domain",
     Cell: (row) => {
       return <span style={{textTransform: 'none'}}>{row?.cell?.value}</span>;
