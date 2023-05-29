@@ -60,33 +60,33 @@ const COLUMNS = [
     },
   },
   {
-    Header: "Provider",
-    accessor: "provider",
+    Header: "Product",
+    accessor: "product",
     Cell: (row) => {
       return <span>{row?.cell?.value}</span>;
     },
   },
   {
-    Header: "Target Date",
-    accessor: "expirationDate",
+    Header: "Coverage Date",
+    accessor: "coverageDate",
     Cell: (row) => {
-      return <span>{row?.cell?.value}</span>;
+      return <span>{new Date(row?.cell?.value).toLocaleDateString()}</span>;
     },
   },
   {
-    Header: "achieved",
-    accessor: "achieved",
+    Header: "Expected Coverage",
+    accessor: "expectedCoverage",
     Cell: (row) => {
       return <span>{row?.cell?.value}</span>;
     },
   },
-  {
-    Header: "goal",
-    accessor: "goal",
-    Cell: (row) => {
-      return <span>{row?.cell?.value}</span>;
-    },
-  },
+  // {
+  //   Header: "goal",
+  //   accessor: "goal",
+  //   Cell: (row) => {
+  //     return <span>{row?.cell?.value}</span>;
+  //   },
+  // },
   {
     Header: "status",
     accessor: "status",
@@ -186,6 +186,10 @@ function buildDomainList(address, chainId) {
       goal: domain.ton + ' kg',
       achieved: Math.floor(parseFloat(domain.ton) * Math.random()) + ' kg',
       status: 'active',
+
+      coverageDate: domain.coverageDate,
+      product: domain.product,
+      expectedCoverage: domain.expectedCoverage,
     })
   }
 

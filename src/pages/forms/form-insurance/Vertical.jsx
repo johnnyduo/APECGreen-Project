@@ -169,6 +169,7 @@ const FormWizard = () => {
         const domainList = window.localStorage.getItem('838EARTH_INSURANCE_' + chain.id + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_INSURANCE_' + chain.id + "_" + address)) : [];
         domainList.push({
           ...data,
+          coverageDate: new Date(value.startDate),
           domainName: subname + '.' + domainName,
         })
         window.localStorage.setItem('838EARTH_INSURANCE_' + chain.id + "_" + address, JSON.stringify(domainList))
@@ -322,6 +323,7 @@ const FormWizard = () => {
                       id="pn3"
                       type="text"
                       placeholder="For i.e, EV Cars, EV Charger"
+                      name="product"
                       register={register}
                     />
                     <Textinput
@@ -342,6 +344,7 @@ const FormWizard = () => {
                       label="Expected Coverage"
                       id="pn5"
                       type="text"
+                      name="expectedCoverage"
                       placeholder="Up to $300,000"
                       register={register}
                     />
