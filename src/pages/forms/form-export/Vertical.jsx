@@ -404,7 +404,7 @@ const FormWizard = () => {
           </div>
 
           <div className="mb-6">
-            <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Carbon Reduction</h6>
+            <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Estimated Carbon Reduction</h6>
             {carbonReduction ?
               <div className="whitespace-pre-line">
                 {carbonReduction}
