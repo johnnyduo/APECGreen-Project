@@ -176,7 +176,7 @@ const FormWizard = () => {
         navigate('/crm')
       } catch (err) {
         console.error(err)
-        window.alert("Buy failed")
+        window.alert("DID mistamatched or buy failed")
       } finally {
         setLoading(false)
       }
