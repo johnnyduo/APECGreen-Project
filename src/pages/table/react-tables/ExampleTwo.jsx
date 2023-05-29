@@ -177,7 +177,7 @@ function buildDomainList(address, chainId) {
         name: domain.companyName,
         image: customer1,
       },
-      domain: domain.domainName + ".earth",
+      domain: domain.domainName + ".green",
       expirationDate: "5/5/2024",
       goal: '11.2M Ton',
       achieved: '3.1M Ton',

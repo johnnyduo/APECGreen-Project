@@ -308,9 +308,9 @@ const FormWizard = () => {
                       </h4>
                     </div>
                     <Textinput
-                      label="Domain Name (.Earth)"
+                      label="Domain Name (.green)"
                       type="text"
-                      placeholder="CompanyName.Earth"
+                      placeholder="companyname.green"
                       name="domainName"
                       error={errors.domainName}
                       register={register}

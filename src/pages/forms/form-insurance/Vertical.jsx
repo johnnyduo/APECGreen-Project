@@ -249,7 +249,7 @@ const FormWizard = () => {
                     <Textinput
                       label="Company Identity (Domain)"
                       type="text"
-                      placeholder="0xCompany.Earth"
+                      placeholder="0xcompany.green"
                       name="username"
                       error={errors.username}
                       register={register}
@@ -286,7 +286,7 @@ const FormWizard = () => {
                       <label className="font-bold text-sm">Expected Export Date</label>
                     </div>
                     <div>
-                      {value.startDate.toString()}
+                      {value.startDate ? new Date(value.startDate).toLocaleDateString() : ""}
                     </div>
                     {/* <Textinput
                       label="Expected Export Date"

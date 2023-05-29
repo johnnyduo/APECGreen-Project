@@ -180,7 +180,7 @@ function buildDomainList(address, chainId) {
 
   for (let domain of domainList) {
     data.push({
-      domain: domain.domainName + ".earth",
+      domain: domain.domainName + ".green",
       expirationDate: "1/1/" + domain.year,
       provider: domain.partnerName,
       goal: domain.ton + ' kg',
