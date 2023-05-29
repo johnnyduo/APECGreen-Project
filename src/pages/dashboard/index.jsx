@@ -42,7 +42,7 @@ const Dashboard = () => {
           </Card>
         </div>
         {/* <div className="lg:col-span-8 col-span-12">
-          <Card title="Focused Solutions" headerslot={<SelectMonth />} noborder>
+          <Card title="Export Solutions" headerslot={<SelectMonth />} noborder>
             <CompanyTable />
           </Card>
         </div>
