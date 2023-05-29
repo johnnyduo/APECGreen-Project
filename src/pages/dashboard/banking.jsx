@@ -145,7 +145,7 @@ const BankingPage = () => {
       toast.success("Successfully invested into an insurance pool")
     } catch (err) {
       console.error(err)
-      window.alert("Buy failed")
+      window.alert("You need to KYB first / DID must be matched")
     } finally {
       setLoading(false)
     }
