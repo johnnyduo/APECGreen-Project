@@ -22,6 +22,10 @@
     @apply h-full;
   }
 
+  .h-full-important {
+    height: 100% !important;
+  }
+
   .dashcode-app-wrapper {
     @apply relative;
   }

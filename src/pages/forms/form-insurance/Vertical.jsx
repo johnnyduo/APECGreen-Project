@@ -294,7 +294,7 @@ const FormWizard = () => {
                         value={value}
                         asSingle={true}
                         inputClassName="input-class"
-                        containerClassName="container-class"
+                        containerClassName="container-class h-full-important"
                         onChange={handleValueChange}
                       />
                     </div>

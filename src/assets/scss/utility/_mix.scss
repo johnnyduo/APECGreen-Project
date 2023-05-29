@@ -152,6 +152,7 @@
   @apply relative w-[140px];
   .input-class {
     @apply opacity-0 cursor-pointer;
+    height: 100%;
   }
   .container-class {
     @apply w-full h-[44px] bg-white dark:bg-slate-800 before:px-3  before:text-sm before:text-slate-900 rounded cursor-pointer;
@@ -181,6 +182,7 @@
   @apply relative w-[160px];
   .input-class {
     @apply opacity-0 cursor-pointer;
+    height: 100%;
   }
   .container-class {
     @apply w-full h-[44px] bg-white dark:bg-slate-800 before:px-3  before:text-sm before:text-slate-900 rounded cursor-pointer;
