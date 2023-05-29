@@ -155,14 +155,14 @@ const FormWizard = () => {
         const yourNode = ethers.utils.solidityKeccak256(['bytes32', 'bytes32'],  ['0xf26e227cc695ab105ff1dd76fedea7a6fb88274144cc3afa6533ec7d7151b22a', ethers.utils.keccak256(ethers.utils.toUtf8Bytes(domainName))])
         const partnerNode = '0x55ff964ed6f40299c384878cec0900fb91fc539607597c27a560eb1ba04419b5'
 
-        const subname = domainName + "-" + data.partnerName.split(' ')[0] + "-" + Math.floor(Math.random() * 1000000).toString().padStart(6, '0')
+        const subname = domainName + "-" + Math.floor(Math.random() * 1000000).toString().padStart(6, '0')
 
         await (await token.approve('0x838Ea5417b33Ba5Ba8e144F49739A81Ad2249Fb5', ethers.utils.parseEther(data.amount.toString()))).wait()
         await (await registrar.buyInsurance(
           yourNode,
           partnerNode,
           subname,
-          data.ton,
+          100,
           ethers.utils.parseEther(data.amount.toString()),
         )).wait()
 
