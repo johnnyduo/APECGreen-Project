@@ -189,7 +189,7 @@ function buildDomainList(address, chainId) {
 
       coverageDate: domain.coverageDate,
       product: domain.product,
-      expectedCoverage: domain.expectedCoverage,
+      expectedCoverage: domain.expectedCoverage + "$",
     })
   }
 
