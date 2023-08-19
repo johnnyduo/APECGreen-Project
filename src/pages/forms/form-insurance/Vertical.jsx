@@ -353,7 +353,7 @@ const FormWizard = () => {
                       id="pn2"
                       readonly
                       type="text"
-                      placeholder="$30,000 per export"
+                      placeholder="$5,000 per export"
                       register={register}
                     />
                   </div>
