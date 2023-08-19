@@ -54,7 +54,7 @@ const ComingSoonPage = () => {
               <span>APEC Green</span>
             </div>
             <div className="xl:text-[3.5em] xl:leading-[70px] xs:text-[2em] sm:text-[2.5em] text-4xl font-semibold text-slate-900 dark:text-white">
-              Sustainable Trade Credit Insurance 
+              Ensured Sustainable Trade Across APEC 
             </div>
             <p className="font-normal text-slate-600 dark:text-slate-300 max-w-[500px]">
               Empowering Sustainable Trade with APEC Green by Unlocking Opportunities & Ensuring Protection. 
