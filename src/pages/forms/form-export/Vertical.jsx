@@ -307,7 +307,7 @@ const FormWizard = () => {
                       register={register}
                     />
                     <Select
-                      options={["2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"]}
+                      options={["2024", "2025", "2026", "2027", "2028", "2029", "2030"]}
                       label="Target export year"
                       name="year"
                       error={errors.year}
