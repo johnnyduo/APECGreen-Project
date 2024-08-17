@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 import axios from "axios"
 
 import botthinking from "../../../assets/images/botthinking.gif"
+import { CHATGPT_ENDPOINT, CHATGPT_MODEL } from "../../../configs/chatgpt";
 
 const steps = [
   {
@@ -126,9 +127,9 @@ const FormWizard = () => {
 
       promises.push(
         axios.post(
-          'https://chatgpt.chom.business/v1/chat/completions',
+          CHATGPT_ENDPOINT,
           {
-            "model": "gpt-3.5-turbo",
+            "model": CHATGPT_MODEL,
             "max_tokens": 500,
             "messages": [
               {
@@ -136,7 +137,12 @@ const FormWizard = () => {
                 "content": `${queryText} Please list any factor required to estimate carboon footprint. Please give answer in list of no more than 50 words each and at most 10 bullets`
               }
             ]
-          }
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+            }
+          },
         ).then(carbonFootprintResponse => (
           setCarbonFootprint(carbonFootprintResponse.data.choices[0].message.content)
         )).catch(err => {
@@ -147,9 +153,9 @@ const FormWizard = () => {
 
       promises.push(
         axios.post(
-          'https://chatgpt.chom.business/v1/chat/completions',
+          CHATGPT_ENDPOINT,
           {
-            "model": "gpt-3.5-turbo",
+            "model": CHATGPT_MODEL,
             "max_tokens": 500,
             "messages": [
               {
@@ -157,7 +163,12 @@ const FormWizard = () => {
                 "content": `${queryText} Please estimate carbon reduction and show how to estimate it. Please give answer in summarized form in at most two paragraphs`
               }
             ]
-          }
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+            }
+          },
         ).then(carbonReductionResponse => (
           setCarbonReduction(carbonReductionResponse.data.choices[0].message.content)
         )).catch(err => {
@@ -168,9 +179,9 @@ const FormWizard = () => {
 
       promises.push(
         axios.post(
-          'https://chatgpt.chom.business/v1/chat/completions',
+          CHATGPT_ENDPOINT,
           {
-            "model": "gpt-3.5-turbo",
+            "model": CHATGPT_MODEL,
             "max_tokens": 500,
             "messages": [
               {
@@ -178,7 +189,12 @@ const FormWizard = () => {
                 "content": `${queryText} Please list any beneficial policies of that country that support our product. Please give answer in list of no more than 50 words each and at most 10 bullets`
               }
             ]
-          }
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+            }
+          },
         ).then(beneficialPoliciesResponse => (
           setBeneficialPolicies(beneficialPoliciesResponse.data.choices[0].message.content)
         )).catch(err => {
@@ -189,9 +205,9 @@ const FormWizard = () => {
 
       promises.push(
         axios.post(
-          'https://chatgpt.chom.business/v1/chat/completions',
+          CHATGPT_ENDPOINT,
           {
-            "model": "gpt-3.5-turbo",
+            "model": CHATGPT_MODEL,
             "max_tokens": 500,
             "messages": [
               {
@@ -199,7 +215,12 @@ const FormWizard = () => {
                 "content": `${queryText} Please list any resisting policies of that country that prevent our product from success in the particular country. Please give answer in list of no more than 50 words each and at most 10 bullets`
               }
             ]
-          }
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+            }
+          },
         ).then(resistingPoliciesResponse => (
           setResistingPolicies(resistingPoliciesResponse.data.choices[0].message.content)
         )).catch(err => {

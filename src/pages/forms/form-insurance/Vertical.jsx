@@ -14,6 +14,7 @@ import { useAccount, useContract, useNetwork, useSigner } from "wagmi";
 import EarthRegistrarControllerABI from "./EarthRegistrarControllerABI.json";
 import { ethers } from "ethers";
 import { useNavigate } from "react-router-dom";
+import { CHAIN_ID } from "../../../configs/chainId";
 
 const steps = [
   {
@@ -157,22 +158,22 @@ const FormWizard = () => {
 
         const subname = domainName + "-" + Math.floor(Math.random() * 1000000).toString().padStart(6, '0')
 
-        await (await token.approve('0x838Ea5417b33Ba5Ba8e144F49739A81Ad2249Fb5', ethers.utils.parseEther(data.amount.toString()))).wait()
-        await (await registrar.buyInsurance(
-          yourNode,
-          partnerNode,
-          subname,
-          100,
-          ethers.utils.parseEther(data.amount.toString()),
-        )).wait()
+        // await (await token.approve('0x838Ea5417b33Ba5Ba8e144F49739A81Ad2249Fb5', ethers.utils.parseEther(data.amount.toString()))).wait()
+        // await (await registrar.buyInsurance(
+        //   yourNode,
+        //   partnerNode,
+        //   subname,
+        //   100,
+        //   ethers.utils.parseEther(data.amount.toString()),
+        // )).wait()
 
-        const domainList = window.localStorage.getItem('838EARTH_INSURANCE_' + chain.id + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_INSURANCE_' + chain.id + "_" + address)) : [];
+        const domainList = window.localStorage.getItem('838EARTH_INSURANCE_' + CHAIN_ID + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_INSURANCE_' + CHAIN_ID + "_" + address)) : [];
         domainList.push({
           ...data,
           coverageDate: new Date(value.startDate),
           domainName: subname + '.' + domainName,
         })
-        window.localStorage.setItem('838EARTH_INSURANCE_' + chain.id + "_" + address, JSON.stringify(domainList))
+        window.localStorage.setItem('838EARTH_INSURANCE_' + CHAIN_ID + "_" + address, JSON.stringify(domainList))
 
         navigate('/crm')
       } catch (err) {

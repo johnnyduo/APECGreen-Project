@@ -14,6 +14,7 @@ import GlobalFilter from "./GlobalFilter";
 
 import customer1 from "@/assets/images/all-img/customer_1.png";
 import { useAccount, useNetwork } from "wagmi";
+import { CHAIN_ID } from "../../../configs/chainId";
 
 const COLUMNS = [
   // {
@@ -192,7 +193,7 @@ const ExampleTwo = ({ title = "Advanced Table Two" }) => {
   const { address } = useAccount()
   const { chain } = useNetwork()
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => buildDomainList(address, chain.id), []);
+  const data = useMemo(() => buildDomainList(address, CHAIN_ID), []);
 
   const tableInstance = useTable(
     {

@@ -35,15 +35,15 @@ const ComingSoonPage = () => {
               <img src={isDark ? LogoWhite : Logo} alt="" width="132"/>
             </Link>
           </div>
-          <div>
-            <ConnectButton label="Try App" />
-          </div>
           {/* <div>
+            <ConnectButton label="Try App" />
+          </div> */}
+          <div>
             <Button text="Try App" className=" btn-dark btn-lg" onClick={() => {
               dispatch(handleLogin(true));
               navigate("/dashboard")
             }} />
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="container">

@@ -153,7 +153,7 @@ const Header = ({ className = "custom-class" }) => {
             <HorizentalMenu />
           ) : null}
           {/* Nav Tools  */}
-          <div className="nav-tools flex items-center lg:space-x-6 space-x-3 rtl:space-x-reverse">
+          {/* <div className="nav-tools flex items-center lg:space-x-6 space-x-3 rtl:space-x-reverse">
             <button className="btn btn-dark" onClick={() => requestFaucet()}>Faucet</button>
             {width >= breakpoints.md && <ConnectButton />}
             {width <= breakpoints.md && (
@@ -164,7 +164,7 @@ const Header = ({ className = "custom-class" }) => {
                 <Icon icon="heroicons-outline:menu-alt-3" />
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

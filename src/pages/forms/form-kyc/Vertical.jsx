@@ -13,6 +13,7 @@ import * as yup from "yup";
 import { useAccount, useContract, useContractWrite, useNetwork, usePrepareContractWrite, useSigner } from "wagmi";
 import EarthRegistrarControllerABI from "./EarthRegistrarControllerABI.json"
 import { useNavigate } from "react-router-dom";
+import { CHAIN_ID } from "../../../configs/chainId";
 
 const steps = [
   {
@@ -118,23 +119,23 @@ const FormWizard = () => {
 
         setMinting(true)
       
-        const tx = await registrar.register(
-          domainName.split('.')[0],
-          address,
-          Math.floor(Date.now() / 1000) + 31536000,
-          "0x" + "1234".padStart(64, "0"),
-          "0x",
-        )
+        // const tx = await registrar.register(
+        //   domainName.split('.')[0],
+        //   address,
+        //   Math.floor(Date.now() / 1000) + 31536000,
+        //   "0x" + "1234".padStart(64, "0"),
+        //   "0x",
+        // )
   
-        await tx.wait()
+        // await tx.wait()
 
-        const domainList = window.localStorage.getItem('838EARTH_DOMAINS_' + chain.id + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_DOMAINS_' + chain.id + "_" + address)) : [];
+        const domainList = window.localStorage.getItem('838EARTH_DOMAINS_' + CHAIN_ID + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_DOMAINS_' + CHAIN_ID + "_" + address)) : [];
         domainList.push({
           companyName: data.username,
           ...data,
           domainName: domainName.split('.')[0],
         })
-        window.localStorage.setItem('838EARTH_DOMAINS_' + chain.id + "_" + address, JSON.stringify(domainList))
+        window.localStorage.setItem('838EARTH_DOMAINS_' + CHAIN_ID + "_" + address, JSON.stringify(domainList))
 
         navigate('/crm')
       } catch (err) {

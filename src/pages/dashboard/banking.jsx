@@ -17,6 +17,7 @@ import { useAccount, useContract, useNetwork, useSigner } from "wagmi";
 import { toast } from "react-toastify";
 import { ethers } from "ethers";
 import Select from "../../components/ui/Select";
+import { CHAIN_ID } from "../../configs/chainId";
 const users = [
   {
     name: "Ab",
@@ -109,7 +110,7 @@ const BankingPage = () => {
   const [loading, setLoading] = useState(false)
 
   const refreshData = () => {
-    const data = window.localStorage.getItem('838EARTH_INVEST_' + chain.id + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_INVEST_' + chain.id + "_" + address)) : [];
+    const data = window.localStorage.getItem('838EARTH_INVEST_' + CHAIN_ID + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_INVEST_' + CHAIN_ID + "_" + address)) : [];
     setInvestments(data)
   }
 
@@ -128,7 +129,7 @@ const BankingPage = () => {
         ethers.utils.parseEther(amount.toString()),
       )).wait()
 
-      const investList = window.localStorage.getItem('838EARTH_INVEST_' + chain.id + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_INVEST_' + chain.id + "_" + address)) : [];
+      const investList = window.localStorage.getItem('838EARTH_INVEST_' + CHAIN_ID + "_" + address) ? JSON.parse(window.localStorage.getItem('838EARTH_INVEST_' + CHAIN_ID + "_" + address)) : [];
       investList.push({
         claimPool,
         amount,
@@ -136,7 +137,7 @@ const BankingPage = () => {
         type: "invest",
         date: new Date(),
       })
-      window.localStorage.setItem('838EARTH_INVEST_' + chain.id + "_" + address, JSON.stringify(investList))
+      window.localStorage.setItem('838EARTH_INVEST_' + CHAIN_ID + "_" + address, JSON.stringify(investList))
 
       refreshData()
 
