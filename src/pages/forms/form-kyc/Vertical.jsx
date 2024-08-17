@@ -237,7 +237,7 @@ const FormWizard = () => {
                       register={register}
                     />
                     <Select
-                      options={["Automobile", "Energy", "Miner", "Electrical", "Manufacturing", "Construction", "Telecommunication"]}
+                      options={["Automobile", "Energy", "F&B", "Miner", "Electrical", "Manufacturing", "Construction", "Telecommunication"]}
                       label="Business Industry"
                     />
                     
