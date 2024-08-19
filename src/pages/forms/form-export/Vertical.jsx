@@ -140,7 +140,7 @@ const FormWizard = () => {
           },
           {
             headers: {
-              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
             }
           },
         ).then(carbonFootprintResponse => (
@@ -166,7 +166,7 @@ const FormWizard = () => {
           },
           {
             headers: {
-              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
             }
           },
         ).then(carbonReductionResponse => (
@@ -192,7 +192,7 @@ const FormWizard = () => {
           },
           {
             headers: {
-              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
             }
           },
         ).then(beneficialPoliciesResponse => (
@@ -218,7 +218,7 @@ const FormWizard = () => {
           },
           {
             headers: {
-              Authorization: "Bearer " + import.meta.env.VITE_CHATGPT_TOKEN,
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
             }
           },
         ).then(resistingPoliciesResponse => (

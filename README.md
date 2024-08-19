@@ -2,8 +2,32 @@
 
 URL: [APEC.Green](https://apec.green)
 
-## Inspiration
-The inspiration behind APEC.Green stems from the need to empower MSMEs and underserved groups in accessing sustainable trade opportunities in the global marketplace. We aim to revolutionize international trade and promote eco-friendly practices.
+APEC.Green is an AI-powered trade platform designed to simplify access to international markets for micro, small, and medium enterprises (MSMEs), as well as underserved groups, including women, minorities, and Indigenous Peoples. The platform focuses on promoting sustainable trade practices by integrating advanced AI sustainability filters and providing comprehensive trade credit insurance options. By leveraging the latest Upstage AI technology, APEC.Green delivers a streamlined, transparent, and trustworthy ecosystem for global trade, enabling businesses to succeed while reducing their environmental impact.
 
-## What it does?
-APEC.Green is a platform that facilitates sustainable global trade for MSMEs and underserved groups. It provides a decentralized trade ecosystem where businesses can access AI-powered sustainability filters, streamline export processes, assess carbon footprint factors, and secure comprehensive trade credit insurance. The platform promotes transparency, trust, and inclusivity in international trade.
+## Upstage Usage
+
+## Installation
+
+To install follow these commands
+
+```bash
+git clone https://github.com/johnnyduo/APECGreen-Project
+cd APECGreen-Project
+yarn install
+```
+
+And set your Upstage token in the `.env` file
+
+```
+VITE_UPSTAGE_TOKEN=up_aI0jwPU2k...
+```
+
+Finally, start the development server with this command
+
+```bash
+yarn dev
+```
+
+## Deployment
+
+You can deploy 
