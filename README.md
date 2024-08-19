@@ -6,6 +6,12 @@ APEC.Green is an AI-powered trade platform designed to simplify access to intern
 
 ## Upstage Usage
 
+### Chat
+
+On the "Export AI Assistant" tab, you can enter...
+
+### Translation
+
 ## Installation
 
 To install follow these commands
@@ -28,6 +34,8 @@ Finally, start the development server with this command
 yarn dev
 ```
 
+In case you want to build for the production usgage, run this build command
+
 ## Deployment
 
-You can deploy 
+After you have built the project, you can deploy them on your server

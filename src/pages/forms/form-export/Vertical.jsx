@@ -253,7 +253,7 @@ const FormWizard = () => {
 
   return (
     <div>
-      <Card title="Export AI Assistant (Powered By GPT3.5 Turbo)">
+      <Card title="Export AI Assistant (Powered By Upstage AI)">
         <div className="grid gap-5 grid-cols-12">
 
           <div className="conten-box lg:col-span-12 col-span-12">
