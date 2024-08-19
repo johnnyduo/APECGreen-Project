@@ -17,7 +17,7 @@ import { toast } from "react-toastify";
 import axios from "axios"
 
 import botthinking from "../../../assets/images/botthinking.gif"
-import { CHATGPT_ENDPOINT, CHATGPT_MODEL } from "../../../configs/chatgpt";
+import { CHATGPT_ENDPOINT, CHATGPT_MODEL, TRANSLATION_MODEL } from "../../../configs/chatgpt";
 
 const steps = [
   {
@@ -118,12 +118,20 @@ const FormWizard = () => {
   const [beneficialPolicies, setBeneficialPolicies] = useState("")
   const [resistingPolicies, setResistingPolicies] = useState("")
 
+  const [isKorean, setIsKorean] = useState(false)
+
+  const [carbonFootprintKo, setCarbonFootprintKo] = useState("")
+  const [carbonReductionKo, setCarbonReductionKo] = useState("")
+  const [beneficialPoliciesKo, setBeneficialPoliciesKo] = useState("")
+  const [resistingPoliciesKo, setResistingPoliciesKo] = useState("")
+
   const onSubmit = async (data) => {
     const queryText = `I want to export ${data.quantity} ${data.product} weight ${data.weight} kg in ${data.year} from ${data.origination} to ${data.country}.`
     const promises = []
 
     try {
       setMinting(true)
+      setIsKorean(false)
 
       promises.push(
         axios.post(
@@ -244,6 +252,130 @@ const FormWizard = () => {
       setMinting(false)
     }
   };
+
+  const translateKorean = async () => {
+    if (isKorean) {
+      setIsKorean(false)
+      return;
+    } else if (carbonFootprintKo && carbonReductionKo && beneficialPoliciesKo && resistingPoliciesKo) {
+      setIsKorean(true)
+      return;
+    }
+
+    const promises = []
+
+    try {
+      setMinting(true)
+      setIsKorean(true)
+
+      promises.push(
+        axios.post(
+          CHATGPT_ENDPOINT,
+          {
+            "model": TRANSLATION_MODEL,
+            "messages": [
+              {
+                "role": "user",
+                "content": carbonFootprint,
+              }
+            ]
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
+            }
+          },
+        ).then(response => (
+          setCarbonFootprintKo(response.data.choices[0].message.content)
+        )).catch(err => {
+          console.error(err)
+          toast.error("Error generating response for carbon footprint")
+        })
+      );
+
+      promises.push(
+        axios.post(
+          CHATGPT_ENDPOINT,
+          {
+            "model": TRANSLATION_MODEL,
+            "messages": [
+              {
+                "role": "user",
+                "content": carbonReduction,
+              }
+            ]
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
+            }
+          },
+        ).then(response => (
+          setCarbonReductionKo(response.data.choices[0].message.content)
+        )).catch(err => {
+          console.error(err)
+          toast.error("Error generating response for carbon reduction")
+        })
+      );
+
+      promises.push(
+        axios.post(
+          CHATGPT_ENDPOINT,
+          {
+            "model": TRANSLATION_MODEL,
+            "messages": [
+              {
+                "role": "user",
+                "content": beneficialPolicies,
+              }
+            ]
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
+            }
+          },
+        ).then(response => (
+          setBeneficialPoliciesKo(response.data.choices[0].message.content)
+        )).catch(err => {
+          console.error(err)
+          toast.error("Error generating response for beneficial policies")
+        })
+      );
+
+      promises.push(
+        axios.post(
+          CHATGPT_ENDPOINT,
+          {
+            "model": TRANSLATION_MODEL,
+            "messages": [
+              {
+                "role": "user",
+                "content": resistingPolicies,
+              }
+            ]
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + import.meta.env.VITE_UPSTAGE_TOKEN,
+            }
+          },
+        ).then(response => (
+          setResistingPoliciesKo(response.data.choices[0].message.content)
+        )).catch(err => {
+          console.error(err)
+          toast.error("Error generating response for resisting policies")
+        })
+      );
+
+      await Promise.all(promises)
+    } catch (err) {
+      console.error(err)
+      toast.error("Internal server error")
+    } finally {
+      setMinting(false)
+    }
+  }
 
   const handlePrev = () => {
     setStepNumber(stepNumber - 1);
@@ -412,10 +544,19 @@ const FormWizard = () => {
       {(minting || carbonFootprint || carbonReduction || beneficialPolicies || resistingPolicies) &&
         <Card title="AI Response" className="mt-8">
           <div className="mb-6">
+            <Button
+              text={isKorean ? "Translate to English" : "Translate to Korean"}
+              className="btn-dark"
+              disabled={minting}
+              onClick={() => translateKorean()}
+            />
+          </div>
+
+          <div className="mb-6">
             <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Carbon Footprint Factors</h6>
-            {carbonFootprint ?
+            {carbonFootprint && !minting ?
               <div className="whitespace-pre-line">
-                {carbonFootprint}
+                {isKorean ? carbonFootprintKo : carbonFootprint}
               </div>
               :
               <div className="mb-10">
@@ -426,9 +567,9 @@ const FormWizard = () => {
 
           <div className="mb-6">
             <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Estimated Carbon Reduction</h6>
-            {carbonReduction ?
+            {carbonReduction && !minting ?
               <div className="whitespace-pre-line">
-                {carbonReduction}
+                {isKorean ? carbonReductionKo : carbonReduction}
               </div>
               :
               <div className="mb-10">
@@ -440,9 +581,9 @@ const FormWizard = () => {
           <div className="mb-6">
             <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Beneficial Policies</h6>
             
-            {beneficialPolicies ?
+            {beneficialPolicies && !minting ?
               <div className="whitespace-pre-line">
-                {beneficialPolicies}
+                {isKorean ? beneficialPoliciesKo : beneficialPolicies}
               </div>
               :
               <div className="mb-10">
@@ -453,9 +594,9 @@ const FormWizard = () => {
 
           <div className="mb-6">
             <h6 className="text-lg text-slate-800 dark:text-slate-300 mb-3">Resisting Policies</h6>
-            {resistingPolicies ?
+            {resistingPolicies && !minting ?
               <div className="whitespace-pre-line">
-                {resistingPolicies}
+                {isKorean ? resistingPoliciesKo : resistingPolicies}
               </div>
               :
               <div className="mb-10">
