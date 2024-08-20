@@ -8,9 +8,17 @@ APEC.Green is an AI-powered trade platform designed to simplify access to intern
 
 ### Chat
 
-On the "Export AI Assistant" tab, you can enter...
+On the "Export AI Assistant" tab, you can enter your export information to ask the Upstage Export AI Assistant to explore strategies related to carbon footprint, carbon reduction, beneficial policies, and resisting policies. Afterward, you can proceed to complete KYB and purchase trade credit insurance.
+
+![image](https://github.com/user-attachments/assets/8b479234-d9b5-44b8-83cb-eaae1fd9385d)
+
+![image](https://github.com/user-attachments/assets/a5907d36-857c-433f-a872-d9dd23c83313)
 
 ### Translation
+
+If you need to translate to Korean, especially for communication with a Korean company, you can press the "Translate to Korean" button to translate the entire response into Korean with one click using Upstage AI.
+
+![image](https://github.com/user-attachments/assets/462e54ad-11e8-461a-80a2-e65dc24a043f)
 
 ## Installation and Deployment
 
